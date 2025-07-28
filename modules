@@ -1,0 +1,37 @@
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+packages = ["freetype", "gumbo", "harfbuzz", "jbig2dec", "libjpeg_turbo", "mupdf", "openjpeg", "swig", "xcbuild"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "PDF Processor Setup"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "pdf_processor_test"
+
+[[workflows.workflow]]
+name = "PDF Processor Setup"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pip install PyMuPDF pdfplumber && mkdir -p input output"
+
+[[workflows.workflow]]
+name = "pdf_processor_test"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pip install PyMuPDF pdfplumber && python3 main.py --help"

@@ -1,0 +1,98 @@
+{
+  "errors": [],
+  "filename": "sample_document.pdf",
+  "language": "english",
+  "outline": [
+    {
+      "level": "H1",
+      "page": 1,
+      "text": "Introduction to Artificial Intelligence"
+    },
+    {
+      "level": "H2",
+      "page": 2,
+      "text": "What is AI?"
+    },
+    {
+      "level": "H3",
+      "page": 3,
+      "text": "History of AI Development"
+    },
+    {
+      "level": "H3",
+      "page": 5,
+      "text": "Current Applications"
+    },
+    {
+      "level": "H2",
+      "page": 8,
+      "text": "Machine Learning Fundamentals"
+    },
+    {
+      "level": "H3",
+      "page": 9,
+      "text": "Supervised Learning"
+    },
+    {
+      "level": "H3",
+      "page": 12,
+      "text": "Unsupervised Learning"
+    },
+    {
+      "level": "H1",
+      "page": 15,
+      "text": "Neural Networks"
+    },
+    {
+      "level": "H2",
+      "page": 16,
+      "text": "Deep Learning Architecture"
+    }
+  ],
+  "page_count": 20,
+  "processing_time": 4.231,
+  "tables": [
+    {
+      "bbox": [72.0, 150.0, 523.0, 220.0],
+      "column_count": 3,
+      "headers": ["Algorithm", "Accuracy", "Training Time"],
+      "page": 10,
+      "row_count": 4,
+      "rows": [
+        ["Decision Tree", "85.2%", "2.1 seconds"],
+        ["Random Forest", "91.7%", "8.4 seconds"],
+        ["Neural Network", "94.3%", "45.2 seconds"],
+        ["SVM", "88.9%", "12.7 seconds"]
+      ],
+      "structure": {
+        "empty_columns": [],
+        "has_header": true,
+        "numeric_columns": [1, 2],
+        "row_types": [],
+        "text_columns": [0]
+      },
+      "table_index": 0
+    },
+    {
+      "bbox": [72.0, 300.0, 523.0, 420.0],
+      "column_count": 4,
+      "headers": ["Year", "Breakthrough", "Researcher", "Impact Score"],
+      "page": 4,
+      "row_count": 3,
+      "rows": [
+        ["1956", "Dartmouth Conference", "John McCarthy", "9.8"],
+        ["1997", "Deep Blue defeats Kasparov", "IBM Team", "8.5"],
+        ["2012", "AlexNet CNN", "Geoffrey Hinton", "9.9"]
+      ],
+      "structure": {
+        "empty_columns": [],
+        "has_header": true,
+        "numeric_columns": [0, 3],
+        "row_types": [],
+        "text_columns": [1, 2]
+      },
+      "table_index": 1
+    }
+  ],
+  "title": "Introduction to Artificial Intelligence"
+}

@@ -1,0 +1,86 @@
+{
+  "errors": [],
+  "filename": "multilingual_document.pdf",
+  "language": "arabic",
+  "outline": [
+    {
+      "level": "H1",
+      "page": 1,
+      "text": "مقدمة في الذكاء الاصطناعي"
+    },
+    {
+      "level": "H2",
+      "page": 2,
+      "text": "ما هو الذكاء الاصطناعي؟"
+    },
+    {
+      "level": "H3",
+      "page": 3,
+      "text": "تاريخ تطوير الذكاء الاصطناعي"
+    },
+    {
+      "level": "H2",
+      "page": 6,
+      "text": "التطبيقات الحالية"
+    },
+    {
+      "level": "H1",
+      "page": 8,
+      "text": "الشبكات العصبية"
+    },
+    {
+      "level": "H2",
+      "page": 9,
+      "text": "第一章：机器学习基础"
+    },
+    {
+      "level": "H3",
+      "page": 11,
+      "text": "教師あり学習の概念"
+    }
+  ],
+  "page_count": 15,
+  "processing_time": 3.847,
+  "tables": [
+    {
+      "bbox": [72.0, 200.0, 523.0, 280.0],
+      "column_count": 3,
+      "headers": ["الخوارزمية", "الدقة", "وقت التدريب"],
+      "page": 5,
+      "row_count": 3,
+      "rows": [
+        ["شجرة القرار", "٨٥.٢٪", "٢.١ ثانية"],
+        ["الغابة العشوائية", "٩١.٧٪", "٨.٤ ثانية"],
+        ["الشبكة العصبية", "٩٤.٣٪", "٤٥.٢ ثانية"]
+      ],
+      "structure": {
+        "empty_columns": [],
+        "has_header": true,
+        "numeric_columns": [1, 2],
+        "row_types": [],
+        "text_columns": [0]
+      },
+      "table_index": 0
+    },
+    {
+      "bbox": [72.0, 350.0, 523.0, 450.0],
+      "column_count": 4,
+      "headers": ["年份", "突破", "研究者", "影响分数"],
+      "page": 10,
+      "row_count": 2,
+      "rows": [
+        ["1997年", "深蓝击败卡斯帕罗夫", "IBM团队", "8.5"],
+        ["2012年", "AlexNet卷积神经网络", "Geoffrey Hinton", "9.9"]
+      ],
+      "structure": {
+        "empty_columns": [],
+        "has_header": true,
+        "numeric_columns": [0, 3],
+        "row_types": [],
+        "text_columns": [1, 2]
+      },
+      "table_index": 1
+    }
+  ],
+  "title": "مقدمة في الذكاء الاصطناعي"
+}
