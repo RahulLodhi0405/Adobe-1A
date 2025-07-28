@@ -1,93 +1,116 @@
-# Multilingual PDF Outline and Table Extractor
+---
 
-A robust Python application for extracting structured outlines and table data from PDF files with comprehensive Unicode support for all languages including RTL scripts (Arabic, Hebrew), CJK languages (Chinese, Japanese, Korean), and complex scripts.
+# **Multilingual PDF Outline & Table Extractor**
 
-## Features
+A high-performance Python application for extracting structured outlines and table data from PDF files with full multilingual support. Designed to handle complex scripts and global writing systems, including RTL (Arabic, Hebrew), CJK (Chinese, Japanese, Korean), and mixed-direction texts.
 
-- **Multilingual Support**: Full Unicode support for all writing systems
-- **Outline Extraction**: Structured document outline with heading hierarchy (H1, H2, H3)
-- **Table Extraction**: Complete table data with structure preservation
-- **Language Detection**: Automatic detection of document language
-- **Text Direction**: Proper handling of LTR, RTL, and mixed text directions
-- **Robust Processing**: Multiple fallback strategies for outline and table detection
-- **Fast Processing**: Optimized for processing under 10 seconds per PDF
-- **Batch Processing**: Process multiple PDFs from input directory
+---
 
-## Requirements
+## **Key Features**
 
-- Python 3.7+
-- PyMuPDF (fitz)
-- pdfplumber
+* ✅ **Full Multilingual Support** – Comprehensive Unicode handling for all writing systems
+* ✅ **Structured Outline Extraction** – Generate hierarchical document outlines (H1, H2, H3)
+* ✅ **Accurate Table Extraction** – Preserve table structure and content integrity
+* ✅ **Automatic Language Detection** – Identify primary document language seamlessly
+* ✅ **Directional Text Handling** – Properly manage LTR, RTL, and mixed text
+* ✅ **Optimized Performance** – Average processing time under 10 seconds per PDF
+* ✅ **Batch Processing** – Process multiple PDFs simultaneously
 
-## Installation
+---
 
-### Option 1: Docker (Recommended)
+## **System Requirements**
 
-1. Build the Docker image:
+* **Python**: 3.7 or later
+* **Libraries**:
+
+  * [PyMuPDF (fitz)](https://pymupdf.readthedocs.io)
+  * [pdfplumber](https://github.com/jsvine/pdfplumber)
+
+---
+
+## **Installation & Setup**
+
+### **Option 1: Docker (Recommended)**
+
+1. **Build the Docker image**
+
+   ```bash
+   chmod +x build_docker.sh
+   ./build_docker.sh
+   ```
+
+2. **Prepare input/output directories**
+
+   ```bash
+   mkdir -p input output
+   ```
+
+3. **Add PDF files to `input` folder**
+
+4. **Run the container**
+
+   ```bash
+   docker run --rm \
+     -v $(pwd)/input:/app/input \
+     -v $(pwd)/output:/app/output \
+     --network none mysolution:latest
+   ```
+
+---
+
+### **Option 2: Local Installation**
+
+1. **Install dependencies**
+
+   ```bash
+   pip install PyMuPDF pdfplumber
+   ```
+
+2. **Create required directories & execute**
+
+   ```bash
+   mkdir -p input output
+   python3 main.py --input ./input --output ./output
+   ```
+
+---
+
+## **Docker Runtime Specifications**
+
+* ✅ **Offline Mode** – No internet access (`--network none`)
+* ✅ **Lightweight** – Model size ≤ 200MB (algorithmic approach only)
+* ✅ **CPU-Optimized** – Runs on amd64 architecture
+* ✅ **Fast Execution** – Under 10 seconds per PDF
+
+---
+
+### **Advanced Docker Usage**
+
+**Custom page limit**
+
 ```bash
-chmod +x build_docker.sh
-./build_docker.sh
-```
-
-2. Create input and output directories:
-```bash
-mkdir -p input output
-```
-
-3. Place your PDF files in the `input` directory
-
-4. Run the container:
-```bash
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolution:latest
-```
-
-### Option 2: Local Installation
-
-1. Install required Python packages:
-```bash
-pip install PyMuPDF pdfplumber
-```
-
-2. Create directories and run:
-```bash
-mkdir -p input output
-python3 main.py --input ./input --output ./output
-```
-
-## Docker Usage
-
-The application is designed to run in a Docker container with no internet access. The container meets the requirements:
-
-- **CPU-only processing** (amd64 architecture)
-- **Model size ≤ 200MB** (uses only algorithmic approaches, no ML models)
-- **Fast processing** (under 10 seconds per PDF)
-- **No internet access** (uses `--network none`)
-
-### Build and Run
-
-```bash
-# Build the image
-./build_docker.sh
-
-# Run with your PDFs
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolution:latest
-```
-
-### Advanced Docker Options
-
-```bash
-# Custom page limit
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolution:latest \
+docker run --rm \
+  -v $(pwd)/input:/app/input \
+  -v $(pwd)/output:/app/output \
+  --network none mysolution:latest \
   python3 main.py --input /app/input --output /app/output --max-pages 30
+```
 
-# Verbose logging
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolution:latest \
+**Enable verbose logging**
+
+```bash
+docker run --rm \
+  -v $(pwd)/input:/app/input \
+  -v $(pwd)/output:/app/output \
+  --network none mysolution:latest \
   python3 main.py --input /app/input --output /app/output --verbose
 ```
 
-## Output Format
+---
 
-The application generates JSON files with the following structure:
+## **Output Structure**
+
+The tool produces **JSON files** for each processed PDF, containing:
 
 ```json
 {
@@ -103,7 +126,7 @@ The application generates JSON files with the following structure:
       "page": 1
     },
     {
-      "level": "H2", 
+      "level": "H2",
       "text": "What is AI?",
       "page": 2
     }
@@ -130,6 +153,20 @@ The application generates JSON files with the following structure:
 }
 ```
 
-See `example_output.json` and `example_multilingual_output.json` for complete examples with English and multilingual content.
+See examples in:
 
-## Usage
+* `example_output.json`
+* `example_multilingual_output.json`
+
+---
+
+## **Usage**
+
+Run the script via CLI or inside Docker as shown above. Add `--help` for full options:
+
+```bash
+python3 main.py --help
+```
+
+---
+
