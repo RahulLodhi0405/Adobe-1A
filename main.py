@@ -88,6 +88,7 @@ def main():
         logging.info(f"Output directory: {output_dir}")
         
         # Get PDF files
+        
         pdf_files = get_pdf_files(input_dir)
         logging.info(f"Found {len(pdf_files)} PDF files to process")
         
