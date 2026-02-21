@@ -82,12 +82,13 @@ def main():
     logging.info("Starting multilingual PDF processing application")
     
     try:
+        
         # Validate directories
         input_dir, output_dir = validate_directories(args.input, args.output)
         logging.info(f"Input directory: {input_dir}")
         logging.info(f"Output directory: {output_dir}")
         
-        
+
         # Get PDF files
 
         pdf_files = get_pdf_files(input_dir)
